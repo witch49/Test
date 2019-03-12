@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>문항 13</title>
+  <script>
+    function printStar(num) {
+      var max = parseFloat(num); // 사용자가 입력한 수
+      if (!Number.isInteger(max)) { // 입력받은 수가 정수가 아닌 경우
+        document.write("입력 오류입니다.");
+        return;
+      }
+      if (max<=0) { // 입력받은 수가 음수인 경우
+        document.write("입력 오류입니다.");
+        return;
+      }
+      /* &nbsp; 로 공백을 주면 *과 &nbsp; 두 개의 사이즈가 서로 달라 모양이 어긋나게 되어
+         &nbsp;를 넣는 대신 *의 색상을 white로 만들어 공백을 만들었습니다. */
+      for (var i = 1; i <= max; i++) {
+        for (var x = 0; x <= (i-1); x++)
+          document.write("*");
+        for (var j = max; j > i; j--)
+          document.write("<span style='color:white;'>*<\/span>");
+        for (var k = max; k > i; k--)
+          document.write("<span style='color:white;'>*<\/span>");
+        for (var l = 0; l <= (i-1); l++)
+          document.write("*");
+        document.write("<br>");
+      }
+    }
+  </script>
+</head>
+<body>
+  <h3>별 문자 출력하기</h3>
+  <hr>
+  <script>
+
+    var num = prompt("정수를 입력하세요", "");
+    printStar(num);
+  </script>
+</body>
+</html>

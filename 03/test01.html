@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>문항 12</title>
+  <script>
+   function drawImage() {
+     var sel = document.getElementById("sports");
+     var img = document.getElementById("sportsImages");
+     img.src = sel.options[sel.selectedIndex].value;
+   }
+ </script>
+</head>
+<body onload="drawImage()">
+  <h3>문항 12</h3>
+  <hr>
+  <form>
+    <select id="sports" onchange="drawImage()">
+      <option value="media/baseball.jpg" selected>야구</option>
+      <option value="media/basketball.jpg">농구</option>
+      <option value="media/soccer.jpeg">축구</option>
+      <option value="media/volleyball.jpg">배구</option>
+    </select><br><br>
+    <img id="sportsImages" src="media/baseball.jpg" style="width:300px; height:300px;" alt="">
+  </form>
+
+</body>
+</html>
